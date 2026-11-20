@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enterprise Performance Insights</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <h1>Enterprise Performance Insights</h1>
+    <p>Revenue, profit and target attainment across departments.</p>
+  </div>
+  <div class="controls">
+    <label>Quarter
+      <select id="q"><option value="all">Full year</option><option value="0">Q1</option><option value="1">Q2</option><option value="2">Q3</option><option value="3">Q4</option></select>
+    </label>
+    <label>Department
+      <select id="d"></select>
+    </label>
+  </div>
+</header>
+
+<section class="kpis" id="kpis" aria-live="polite"></section>
+
+<div class="grid">
+  <section class="card">
+    <h2>Monthly revenue vs target</h2>
+    <div id="line"></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Actual</span><span><i style="background:var(--target)"></i>Target</span></div>
+  </section>
+  <section class="card">
+    <h2>Target attainment by department</h2>
+    <div id="bars"></div>
+  </section>
+</div>
+
+<div class="grid" style="grid-template-columns:2fr 1fr">
+  <section class="card scroll">
+    <h2>Department scorecard</h2>
+    <table>
+      <thead><tr>
+        <th><button data-k="name">Department</button></th>
+        <th><button data-k="rev">Revenue</button></th>
+        <th><button data-k="margin">Margin</button></th>
+        <th><button data-k="att">Attainment</button></th>
+        <th>Status</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+  <section class="card insights">
+    <h2>Insights</h2>
+    <ul id="ins"></ul>
+  </section>
+</div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
